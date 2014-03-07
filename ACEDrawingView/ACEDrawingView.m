@@ -335,6 +335,22 @@
     }
 }
 
+
+#pragma - mark saving/loading
+
+- (NSArray *)save
+{
+    return [self.pathArray copy];
+}
+
+- (void)load:(NSArray *)array
+{
+    [self.pathArray addObjectsFromArray:array];
+    [self updateCacheImage:YES];
+    [self setNeedsDisplay];
+}
+
+
 #if !ACE_HAS_ARC
 
 - (void)dealloc

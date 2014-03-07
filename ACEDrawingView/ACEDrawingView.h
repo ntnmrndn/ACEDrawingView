@@ -69,6 +69,19 @@ typedef enum {
 - (BOOL)canRedo;
 - (void)redoLatestStep;
 
+/**
+ * Save the current ACEDrawingView state.
+ * @returns An array of <NSCoding> compliant objects that
+ * can be restaured later with - (void)load:(NSArray *)array;
+ */
+- (NSArray *)save;
+
+/**
+ * Load a saved ACEDrawingView state a top of current state.
+ * @array An array of saved state.
+ */
+- (void)load:(NSArray *)array;
+
 @end
 
 #pragma mark -
